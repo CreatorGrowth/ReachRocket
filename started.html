@@ -225,6 +225,31 @@ transition:.3s;
 transform:translateY(-8px);
 background:#334155;
 }
+.warning-box{
+max-width:600px;
+margin:20px auto;
+background:rgba(239,68,68,0.1);
+border:1px solid rgba(239,68,68,0.4);
+padding:20px;
+border-radius:12px;
+text-align:left;
+}
+
+.warning-box h3{
+color:#f87171;
+margin-bottom:10px;
+}
+
+.warning-box p{
+color:#cbd5e1;
+line-height:1.6;
+}
+
+.warning-text{
+color:#fca5a5;
+font-weight:500;
+margin-top:10px;
+}
 
 </style>
 </head>
@@ -294,8 +319,23 @@ background:#334155;
 <li>Your username is correct</li>
 <li>You understand processing takes 24–48 hours</li>
 <li>You agree to system verification</li>
+<li></li>
 </ul>
+<div class="warning-box">
 
+  <h3>Important Notice</h3>
+
+  <p>
+    To ensure your account safety and avoid any issues during processing,
+    please follow this instruction carefully:
+  </p>
+
+  <p class="warning-text">
+    Do not restart, reset, or create a new TikTok/Instagram account during the processing period.
+    This may interrupt verification and could result in delays or account restrictions.
+  </p>
+
+</div>
 <button onclick="startProcess()">I Agree & Continue</button>
 </div>
 
@@ -325,7 +365,7 @@ background:#334155;
 <p>Continue</p>
 </a>
 
-<a href="https://www.upgrow.com/" class="card" target="_blank">
+<a href="instagram.html" class="card" target="_blank">
 <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
 <p>Continue</p>
 </a>
