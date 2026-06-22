@@ -1,0 +1,209 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:#fff;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111827;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.logo span{
+color:#3b82f6;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+transition:.3s;
+}
+
+nav a:hover,
+.active{
+color:#3b82f6;
+}
+
+.hero{
+padding:90px 20px;
+text-align:center;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#cbd5e1;
+line-height:1.8;
+}
+
+.rating{
+text-align:center;
+padding:50px 20px;
+}
+
+.rating h2{
+font-size:60px;
+color:#facc15;
+}
+
+.rating p{
+color:#94a3b8;
+margin-top:10px;
+}
+
+.reviews{
+padding:70px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.review{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.review.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.review:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(59,130,246,.25);
+}
+
+.review img{
+width:90px;
+height:90px;
+border-radius:50%;
+margin-bottom:20px;
+}
+
+.review h4{
+margin:8px 0 15px;
+color:#94a3b8;
+font-weight:normal;
+}
+
+.stars{
+color:#facc15;
+font-size:20px;
+margin-bottom:15px;
+}
+
+.review p{
+color:#cbd5e1;
+line-height:1.8;
+}
+
+footer{
+padding:30px;
+text-align:center;
+color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+}
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+    padding:80px 8%;
+    background:#111827;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h2{
+    font-size:55px;
+    color:#3b82f6;
+}
+
+.stat p{
+    margin-top:10px;
+    color:#cbd5e1;
+}
+.review-form{
+padding:80px 8%;
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.review-form form{
+margin-top:30px;
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select{
+
+width:100%;
+padding:15px;
+margin-bottom:18px;
+border:none;
+border-radius:10px;
+background:#1e293b;
+color:white;
+}
+
+.review-form button{
+
+width:100%;
+padding:15px;
+background:#3b82f6;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+
+}
+
+.review-form button:hover{
+
+background:#2563eb;
+
+}

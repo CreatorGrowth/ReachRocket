@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        Creator <span>Growth</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+</header>
+
+<section class="contact">
+
+    <div class="contact-info">
+
+        <h1>Get in Touch</h1>
+
+        <p>
+            Questions, suggestions, or feedback?
+            We'd love to hear from you.
+        </p>
+
+        <div class="info-box">
+
+            <h3>Email</h3>
+            <p>creatorgrowth@gmail.com</p>
+
+        </div>
+
+        <div class="info-box">
+
+            <h3>Support</h3>
+            <p>Usually replies within 24 hours.</p>
+
+        </div>
+
+    </div>
+
+    <div class="contact-form">
+
+        <form id="contactForm">
+
+            <input type="hidden"
+            name="access_key"
+            value="cfc2ec60-6e57-4837-a192-5745688c6ff8">
+
+            <input type="hidden"
+            name="subject"
+            value="New Contact Form">
+
+            <input
+            type="checkbox"
+            name="botcheck"
+            style="display:none;">
+
+            <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required>
+
+            <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required>
+
+            <input
+            type="text"
+            name="topic"
+            placeholder="Subject"
+            required>
+
+            <textarea
+            name="message"
+            placeholder="Write your message..."
+            required></textarea>
+
+            <button type="submit" id="submitBtn">
+
+                Send Message
+
+            </button>
+
+            <p id="result"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="contact.js"></script>
+
+</body>
+</html>
